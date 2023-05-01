@@ -14,7 +14,7 @@ def autoclick():
         tally = tally + 1
         levelup()
 def levelup():
-    level = pyautogui.locateOnScreen('assets/Level Up.png',confidence=0.9)
+    level = pyautogui.locateOnScreen('assets/Level Up.png',confidence=0.8)
     if level == None:
         autoclick()
     else:
