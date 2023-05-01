@@ -7,9 +7,12 @@ pyautogui.moveTo(510,882,1)
 pyautogui.click()
 awesome = True
 def autoclick():
+    tally = 0
     while awesome:
         pyautogui.moveTo(1000,484)
         pyautogui.click()
+        if tally == 100:
+            levelup()
 def levelup():
     level = pyautogui.locateOnScreen('assets/Level Up.png',confidence=0.7)
     if level == None:
