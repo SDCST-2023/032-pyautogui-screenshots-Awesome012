@@ -11,6 +11,7 @@ def autoclick():
     while awesome:
         pyautogui.moveTo(1000,484)
         pyautogui.click()
+        tally = tally + 1
         if tally == 100:
             levelup()
 def levelup():
