@@ -12,6 +12,7 @@ print('looking for icon on whole screen')
 for i in range(10):
     start = time.time()
     x = pyautogui.locateCenterOnScreen('assets/winIcon.png')
+    print(x)
     if x != None:
         # This is an important structure!
         # Sometimes you will look for an image and it will not be there
@@ -24,4 +25,5 @@ print('\n\nlooking in a small box on the bottom left (note that your screen is 1
 for i in range(10):
     start = time.time()
     x = pyautogui.locateCenterOnScreen('assets/winIcon.png',region=(0,800,100,100) )
+    print(x)
     print(round(time.time()-start,5),end=", ")
