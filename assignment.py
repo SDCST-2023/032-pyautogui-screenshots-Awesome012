@@ -21,5 +21,7 @@ def levelup():
         pyautogui.moveTo(level)
         pyautogui.click()
         levelup()
+def nextlevel():
+    level = pyautogui.locateOnScreen('assets/Level Up.png',confidence=0.9)
 
 autoclick()
