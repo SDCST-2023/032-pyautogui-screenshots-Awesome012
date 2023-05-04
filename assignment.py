@@ -1,6 +1,5 @@
 import pyautogui
-import threading
-import time
+import os
 
 inp = input("press enter to start")
 pyautogui.moveTo(510,882,1)
@@ -13,16 +12,17 @@ def autoclick():
         pyautogui.click()
         tally = tally + 1
         if tally == 100:
-            levelup()
+            upgrades()
 
 def levelup():
-    level = pyautogui.locateOnScreen('assets/Level Up.png',confidence=0.9)
+    level = pyautogui.locateOnScreen('assets/Level Up.png',confidence=0.85)
     if level == None:
         newhire()
     else:
         pyautogui.moveTo(level)
         pyautogui.click()
         levelup()
+
 def newhire():
     level = pyautogui.locateOnScreen('assets/Hire.png',confidence=0.8)
     if level == None:
@@ -31,14 +31,12 @@ def newhire():
         pyautogui.moveTo(level)
         pyautogui.click()
         newhire()
+
 def nextlevel():
-    stage = pyautogui.locateOnScreen('assets/New Stage.png',confidence=0.6)
-    if stage == None:
-        timer()
-    else:
-        pyautogui.moveTo(stage)
-        pyautogui.click()
-        nextlevel()
+    pyautogui.moveTo(1058,193)
+    pyautogui.click()
+    timer()
+
 def timer():
     clock = pyautogui.locateOnScreen('assets/Timer.png',confidence=0.8)
     if clock == None:
@@ -46,5 +44,17 @@ def timer():
     else:
         pyautogui.moveTo(942,190)
         pyautogui.click()
-        nextlevel()
+        timer()
+def upgrades():
+    directory = os.listdir('Icons/')
+    for file in directory:
+        check = pyautogui.locateOnScreen(f'Icons/{file}',confidence=0.7)
+        print(check)
+        if check == None:
+            levelup()
+        else:
+            pyautogui.moveTo(check)
+            pyautogui.click()
+            pyautogui.moveTo(1000,400,0.1)
+
 autoclick()
