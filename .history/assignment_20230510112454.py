@@ -7,33 +7,9 @@ inp = input("press enter to start")
 pyautogui.moveTo('assets/Unititled.png')
 pyautogui.click()
 awesome = True
-
 def play1():
-    while awesome:
-        button = pyautogui.locateOnScreen('assets/Play Now.png',confidence=0.85)
-        if button == None:
-            None
-        else:
-            pyautogui.moveTo(button)
-            pyautogui.click()
+    while awesome
 
-def play2():
-    while awesome:
-        button = pyautogui.locateOnScreen('assets/Green Play.png',confidence=0.85)
-        if button == None:
-            None
-        else:
-            pyautogui.moveTo(button)
-            pyautogui.click()
-
-def play3():
-    while awesome:
-        button = pyautogui.locateOnScreen('assets/Exit.png',confidence=0.85)
-        if button == None:
-            None
-        else:
-            pyautogui.moveTo(button)
-            pyautogui.click()
 
 def autoclick():
     pyautogui.moveTo(1000,484)
@@ -94,4 +70,8 @@ def upgrades():
                 pyautogui.click()
                 pyautogui.moveTo(1000,400)
 
+
+Thread(target = play1).start()
+Thread(target = play2).start()
+Thread(target = play3).start()
 Thread(target = movebar).start()

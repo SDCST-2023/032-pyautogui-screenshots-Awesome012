@@ -29,7 +29,3 @@ mylist = location = pyautogui.locateAllOnScreen('assets/winIcon.png')
 print("locate all found (as generator):",mylist)
 converted = list(mylist)
 print("locate all found (as list):",converted)
-
-
-
-

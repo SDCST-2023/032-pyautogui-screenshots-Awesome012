@@ -26,7 +26,7 @@ def play2():
             pyautogui.moveTo(button)
             pyautogui.click()
 
-def play3():
+def play1():
     while awesome:
         button = pyautogui.locateOnScreen('assets/Exit.png',confidence=0.85)
         if button == None:
@@ -34,6 +34,7 @@ def play3():
         else:
             pyautogui.moveTo(button)
             pyautogui.click()
+
 
 def autoclick():
     pyautogui.moveTo(1000,484)
@@ -94,4 +95,8 @@ def upgrades():
                 pyautogui.click()
                 pyautogui.moveTo(1000,400)
 
+
+Thread(target = play1).start()
+Thread(target = play2).start()
+Thread(target = play3).start()
 Thread(target = movebar).start()

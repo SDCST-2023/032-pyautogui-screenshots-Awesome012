@@ -94,4 +94,8 @@ def upgrades():
                 pyautogui.click()
                 pyautogui.moveTo(1000,400)
 
+
+Thread(target = play1).start()
+Thread(target = play2).start()
+Thread(target = play3).start()
 Thread(target = movebar).start()
