@@ -94,4 +94,4 @@ def upgrades():
                 pyautogui.click()
                 pyautogui.moveTo(1000,400)
 
-Thread(target = movebar).start()
+if name == __main__ 
