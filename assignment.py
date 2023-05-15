@@ -1,10 +1,10 @@
 import pyautogui
 import os
-import threading
+from threading import Thread
 import time
 
 inp = input("press enter to start")
-pyautogui.moveTo('assets/Unititled.png')
+pyautogui.moveTo('assets/FireFox.png')
 pyautogui.click()
 awesome = True
 
@@ -42,7 +42,7 @@ def autoclick():
 
 def levelup():
     while awesome:
-        level = pyautogui.locateOnScreen('assets/Level Up.png',confidence=0.85)
+        level = pyautogui.locateOnScreen('assets/Level Up.png',confidence=0.9)
         if level == None:
             None
         else:
@@ -51,7 +51,7 @@ def levelup():
 
 def levelup2():
     while awesome:
-        level2 = pyautogui.locateOnScreen('assets/Level Up 2.png',confidence=0.85)
+        level2 = pyautogui.locateOnScreen('assets/Level Up 2.png',confidence=0.9)
         if level2 == None:
             None
         else:
@@ -94,4 +94,14 @@ def upgrades():
                 pyautogui.click()
                 pyautogui.moveTo(1000,400)
 
-if name == __main__ 
+if __name__ == "__main__": 
+    Thread(target = play1).start()
+    Thread(target = play2).start()
+    Thread(target = play3).start()
+    Thread(target = timer).start()
+    Thread(target = autoclick).start()
+    Thread(target = upgrades).start()
+    Thread(target = levelup).start()
+    Thread(target = levelup2).start()
+    Thread(target = newhire).start()
+    Thread(target = nextlevel).start()
