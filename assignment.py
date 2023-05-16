@@ -77,7 +77,8 @@ def timer():
     while awesome:
         clock = pyautogui.locateOnScreen('assets/Timer.png',confidence=0.8)
         if clock == None:
-            None
+            pyautogui.moveTo(1000,484)
+            pyautogui.click()
         else:
             pyautogui.moveTo(942,190)
             pyautogui.click()
